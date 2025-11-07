@@ -77,11 +77,20 @@ def binary_calc():
     denary_int = 99999999999999
     binary_list = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     i = 1
-    while denary_int > 65535:
+    
+    while True:
         try:
             denary_int = int(denary_input)
+            
         except:
             denary_input = input("Please enter a valid number: ")
+        else:
+            break
+
+    if denary_int > 65535:
+        print("The calculator cannot display past the 65,535 limit.")
+        denary_int = 65535
+            
         
             
             
